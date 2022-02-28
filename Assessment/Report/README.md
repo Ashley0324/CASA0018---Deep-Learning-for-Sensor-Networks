@@ -1,4 +1,4 @@
-# Classify Flowers with Transfer Learning
+# Classify Flowers with Transfer Learning and VGG model
 Qian Jin
 Repo link:https://github.com/Ashley0324/CASA0018---Deep-Learning-for-Sensor-Networks
 
