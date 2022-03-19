@@ -46,7 +46,6 @@ I chose transfer learning as my final model.
 
 
 ### Critical reflection and learning from experiments 
-(observations from experiments, factors incluencing results, potential improvements, weaknesses, feedback from reviews) 
 I still remember the first model training result(accuracy:56%), it's a really stupid model. It even recognizes my face like a rose with 99% similarity. So I started the process to improve my model. This is my record of each test.
 
 
