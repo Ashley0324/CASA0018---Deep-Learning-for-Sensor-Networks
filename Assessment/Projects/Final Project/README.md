@@ -29,7 +29,8 @@ I'd like to capture picture data from my laptop. So I use Edge Empulse to create
 ## Documentation of experiments and results 
 (model training results, description of training runs, model architecture choices, visual record of experiments) 
 ### 1. Define some parameters for the loader:
-![IMG_6868](https://user-images.githubusercontent.com/99146042/159103030-60fbbb58-b25a-4dcf-a57b-73a71e2b81e0.JPG)
+<img width="295" alt="Screenshot 2022-03-19 at 02 12 44" src="https://user-images.githubusercontent.com/99146042/159103828-4645091d-7100-40c1-8b9a-f582c03be10f.png">
+
 
 ### 2. Neural Network settings
 
