@@ -5,6 +5,12 @@ I want my project to be able to classify images of flowers using the camera on m
 
 ### ???Project Overview
 
+This model is designed to classify different kinds of flowers. The inspiration for this project is when I move to London, I buy flowers every week, but some flowers I have never seen is really attractive and I wondered what kind of flower it is. So, I want to find a way to identify these beautiful flowers.
+
+We learned how to recognise cat and dog in lecture part by training a CNN, but I found another tutorial to classify Flowers with transfer Learning. It brought back memories of our leture about transfer learning: it uses less time and is more clever by extracting useful features already learnt from millions of pictures. Higher accuracy and faster convergence are also advantages of this method.((Duncan, CASA0018_06))
+
+I have a better choice, why not?
+
 ### Research Question
 - How to classify image with transfer learning.
 - How to Visualize the rea-time prediction. 
