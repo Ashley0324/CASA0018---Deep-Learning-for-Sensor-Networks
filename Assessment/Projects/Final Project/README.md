@@ -1,9 +1,9 @@
 # Flower Images Classifiction With Transfor Learning
-I want my project to be able to classify images of flowers using the camera on my laptop.
+I want my project to be able to classify images of flowers using the camera on my laptop and iPhone.
 
 ## Definition of problem being solved 
 
-### ???Project Overview
+### Project Overview
 
 This model is designed to classify different kinds of flowers. The inspiration for this project is when I move to London, I buy flowers every week, but some flowers I have never seen is really attractive and I wondered what kind of flower it is. So, I want to find a way to identify these beautiful flowers.
 
@@ -30,7 +30,7 @@ Improve the accuracy above 80%. (While the tutorial accuracy is 78% with CNN)
 ### Application Design
 
 I'd like to capture picture data from my laptop. So I use Edge Empulse to create the application.
-
+<img width="464" alt="Screenshot 2022-03-20 at 13 10 31" src="https://user-images.githubusercontent.com/99146042/159163886-6d528306-15ce-4e3f-a3c5-67ff353b0603.png">
 
 ## Documentation of experiments and results 
 (model training results, description of training runs, model architecture choices, visual record of experiments) 
@@ -42,9 +42,9 @@ I'd like to capture picture data from my laptop. So I use Edge Empulse to create
 
 <img width="588" alt="Screenshot 2022-03-19 at 02 24 22" src="https://user-images.githubusercontent.com/99146042/159103172-0b6f89c9-c527-47fc-bb08-615604bbc883.png">
 
-### ???3. Model Architecture Choices
+### 3. Model Architecture Choices
 
-I chose transfer learning as my final model.
+I chose two maethods to classify flower images: Convolutional Neural Network(CNN) and transfer learning. To explore how they work and their performance. Finally, I used transfer learning to build my application for higher accuracy.
 
 ### 4. Model Training Results
 
@@ -54,13 +54,16 @@ I chose transfer learning as my final model.
 ### Critical reflection and learning from experiments 
 I still remember the first model training result(accuracy:56%), it's a really stupid model. It even recognizes my face like a rose with 99% similarity. So I started the process to improve my model. This is my record of each test.
 
+We can conclude the factors influcing results from the chart:
 
-We can conclude the factors influcing resultsfrom the chart:
 
 In conclusion, I think the transfer learning model works better than the CNN model in flower images classification. Even it cost more time. But it deserves it, isn't it?
 
-However, when I tried to add the training cycles from 11 to 12 or higher, the system always fail to do it. I still can't find the reason.
 
+## Improvement
+- When I tried to add the training cycles from 11 to 12 or higher, the system always fail to do it. I still can't find the reason. I'll work it in the future.
+- Try a new model called VGG16, according to Emine and Ahmat(2019), With transfer learning, frequently used pretrained deep learning models such as Alexnet, Googlenet, VGG16, DenseNet and ResNet are used for image classification. The results show that the models used achieve acceptable performance rates while the highest performance is achieved with the VGG16 model.
+- Explore how the numbers of nuerons impacts the performance.
 
 ### Note: 
 *You can choose what tools you use to write up and document your project - your final submission will be a pdf document being uploaded via Moodle, however we would also expect to see a link through to your GitHub repository where you data, results etc. are documented.*
