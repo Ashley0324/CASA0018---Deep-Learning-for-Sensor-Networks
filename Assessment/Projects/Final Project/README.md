@@ -54,7 +54,8 @@ I chose two maethods to classify flower images: Convolutional Neural Network(CNN
 ### Critical reflection and learning from experiments 
 I still remember the first model training result(accuracy:56%), it's a really stupid model. It even recognizes my face like a rose with 99% similarity. So I started the process to improve my model. This is my record of each test.
 
-We can conclude the factors influcing results from the chart:
+We can conclude the factors influcing results from the chart:Image Size,Color depth,Training cycles,and Data augmentation.
+<img width="900" alt="Screenshot 2022-03-20 at 13 35 06" src="https://user-images.githubusercontent.com/99146042/159164937-8e12c1bb-dd38-40ae-90fa-0d31d68156cd.png">
 
 
 In conclusion, I think the transfer learning model works better than the CNN model in flower images classification. Even it cost more time. But it deserves it, isn't it?
