@@ -1,7 +1,7 @@
 # Flower Images Classifiction With Transfor Learning
-I want my project to be able to classify images of flowers using the camera on my laptop and iPhone.
 
 ## Definition of problem being solved 
+I want my project to be able to classify images of flowers using the camera on my laptop and iPhone.
 
 ### Project Overview
 
@@ -66,5 +66,10 @@ In conclusion, I think the transfer learning model works better than the CNN mod
 - Try a new model called VGG16, according to Emine and Ahmat(2019), With transfer learning, frequently used pretrained deep learning models such as Alexnet, Googlenet, VGG16, DenseNet and ResNet are used for image classification. The results show that the models used achieve acceptable performance rates while the highest performance is achieved with the VGG16 model.
 - Explore how the numbers of nuerons impacts the performance.
 
-### Note: 
-*You can choose what tools you use to write up and document your project - your final submission will be a pdf document being uploaded via Moodle, however we would also expect to see a link through to your GitHub repository where you data, results etc. are documented.*
+## References:
+- Duncan, W. (2022). CASA0018_06. London: UCL, 7-9. https://moodle.ucl.ac.uk/pluginfile.php/4514917/mod_resource/content/1/CASA0018_06.pdf
+- Goodfellow, I., Bengio, Y. & Courville, A., 2016. Deep learning / Ian Goodfellow, Yoshua Bengio and Aaron Courville.
+- https://www.tensorflow.org/tutorials/images/classification#import_tensorflow_and_other_libraries
+- https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model
+
+
