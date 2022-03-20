@@ -27,7 +27,7 @@ Daisy|Dandelions|Sunflowers|Rose|Tulips
 
 Improve the accuracy above 80%. (While the tutorial accuracy is 78% with CNN)
 
-### ??? Application Design
+### Application Design
 
 I'd like to capture picture data from my laptop. So I use Edge Empulse to create the application.
 
