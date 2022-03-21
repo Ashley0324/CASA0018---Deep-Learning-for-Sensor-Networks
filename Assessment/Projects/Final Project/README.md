@@ -18,10 +18,14 @@ I have a better choice, why not?
 
 ### 📊Data Available
 
-I download the flower dataset [here](http://download.tensorflow.org/example_images/flower_photos.tgz). It has 2904 images with 5 labels(Daisy, Dandelions, sunflowers, rose, tulips). I split these as training data(80%) and test data(20%). Training data was used to train the model, while test data was used to evaluate how well the model perform on the new data.
+I download the flower dataset provided by TensorFlow officail example(http://download.tensorflow.org/example_images/flower_photos.tgz). It has 2904 images with 5 labels(Daisy, Dandelions, sunflowers, rose, tulips). I split these as training data(80%) and test data(20%). Training data was used to train the model, while test data was used to evaluate how well the model perform on the new data.
 Daisy|Dandelions|Sunflowers|Rose|Tulips
 --|:--:|--:|--:|--:
 493|701|560|509|641
+
+Here are some labled images:
+![image](https://user-images.githubusercontent.com/99146042/159248053-c2df3e4f-96f9-4fb8-973e-c7ffd2b7bbb1.png)
+(https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model)
 
 ### 🧮Outcomes Anticipated
 
@@ -30,7 +34,11 @@ Improve the accuracy above 80%. (While the tutorial accuracy is 78% with CNN)
 ### 📱Application Design
 
 I'd like to capture picture data from my laptop. So I use Edge Empulse to create the application.
+Here is the link to my edge impulse page:https://studio.edgeimpulse.com/studio/87595/
+
+And you can scan this QR code to enjoy the mobile application now!
 <img width="464" alt="Screenshot 2022-03-20 at 13 10 31" src="https://user-images.githubusercontent.com/99146042/159163886-6d528306-15ce-4e3f-a3c5-67ff353b0603.png">
+
 
 ## ✨Documentation of experiments and results 
 (model training results, description of training runs, model architecture choices, visual record of experiments) 
@@ -47,16 +55,15 @@ I'd like to capture picture data from my laptop. So I use Edge Empulse to create
 I chose two maethods to classify flower images: Convolutional Neural Network(CNN) and transfer learning. To explore how they work and their performance. Finally, I used transfer learning to build my application for higher accuracy.
 
 ### 4. Model Training Results
+I still remember the first model training result(accuracy:56%), it's a really stupid model. It even recognizes my face like a rose with 99% similarity. So I started the process to improve my model. This is my record of each test result.
+
+<img width="900" alt="Screenshot 2022-03-20 at 13 35 06" src="https://user-images.githubusercontent.com/99146042/159164937-8e12c1bb-dd38-40ae-90fa-0d31d68156cd.png">
 
 <img width="582" alt="Screenshot 2022-03-19 at 02 24 32" src="https://user-images.githubusercontent.com/99146042/159103308-89146791-136c-411d-ae30-f240fcf30d0a.png">
 
 
 ### 📝Critical reflection and learning from experiments 
-I still remember the first model training result(accuracy:56%), it's a really stupid model. It even recognizes my face like a rose with 99% similarity. So I started the process to improve my model. This is my record of each test.
-
-We can conclude the factors influcing results from the chart:Image Size,Color depth,Training cycles,and Data augmentation.
-<img width="900" alt="Screenshot 2022-03-20 at 13 35 06" src="https://user-images.githubusercontent.com/99146042/159164937-8e12c1bb-dd38-40ae-90fa-0d31d68156cd.png">
-
+We can conclude the factors influcing results from the results: Image Size,Color depth,Training cycles,and Data augmentation.
 
 In conclusion, I think the transfer learning model works better than the CNN model in flower images classification. Even it cost more time. But it deserves it, isn't it?
 
