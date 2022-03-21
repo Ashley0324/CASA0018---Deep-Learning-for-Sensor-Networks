@@ -70,6 +70,7 @@ In conclusion, I think the transfer learning model works better than the CNN mod
 
 ## 💡Improvement
 - When I tried to **add the training cycles from 11 to 12 or higher**, the system always fail to do it. I still can't find the reason. I'll work it in the future.
+<img width="495" alt="Screenshot 2022-03-21 at 12 05 58" src="https://user-images.githubusercontent.com/99146042/159273030-8fe6fee3-e113-4fbd-866a-d32342c9bf61.png">
 - **Try a new model called VGG16**, according to Emine and Ahmat(2019), With transfer learning, frequently used pretrained deep learning models such as Alexnet, Googlenet, VGG16, DenseNet and ResNet are used for image classification. The results show that the models used achieve acceptable performance rates while the highest performance is achieved with the VGG16 model.
 - Explore how the numbers of nuerons impacts the performance.
 
