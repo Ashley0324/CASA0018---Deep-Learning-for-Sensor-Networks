@@ -1,50 +1,49 @@
 # Classify Flowers with Transfer Learning and VGG model
 Qian Jin
-Repo link:https://github.com/Ashley0324/CASA0018---Deep-Learning-for-Sensor-Networks
+- Repo link:https://github.com/Ashley0324/CASA0018---Deep-Learning-for-Sensor-Networks
+- Edge impulse link: https://studio.edgeimpulse.com/studio/87595/
+- Date: 24 Mar 2022
 
 ## Introduction
-This model is designed to classify different kinds of flowers. The inspiration for this project is when I move to London, I buy flowers every week, but some flowers I have never seen is really attractive and I wondered what kind of flower it is. So, I want to find a way to identify these beautiful flowers.
-
-We learned how to recognise cat and dog in lecture part by training a CNN, but I found another tutorial to classify Flowers with transfer Learning. It brought back memories of our leture about transfer learning: it uses less time and is more clever by extracting useful features already learnt from millions of pictures. Higher accuracy and faster convergence are also advantages of this method.((Duncan, CASA0018_06))
-
-I have a better choice, why not?
-
-So, how do we do it? This process includes three parts:
-
-- Find a pretrained model based on a dataset that represents the data you are working with. 
-- Take the weights of that pretrained model by removing the last “classifier” layer 
-- Freeze the pre-trained layers and add in a new dense layer and classifier which will be the trainable layers
-(Duncan, CASA0018_06)
-
-Ultimately, the recognition rate through this method can be as high as over 80%.
-![image](https://user-images.githubusercontent.com/99146042/155976249-116852f7-f7ae-4250-98a0-c0246de7d439.png)
+Flowers play a vital role in the connected environment and urban life. Flower classification in a high accuracy is helpful to biologists and people who like flowers. Usually, scholars use convolutional neural networks and transfer learning to classify and recognise flowers. According to Yong(2018) transfer learning performs better and gets high accuracy. This research aims to explore what affects the results in flower classification by testing two methods(CNN and transfer learning) based on the flutter flower dataset. The results show that image size, colour depth, training cycles, learning rate and data augmentation are factors influencing the accuracy and loss value. After training and testing the model, the accuracy is obviously improved. At the last step, Edge Impulse was used to create a web application and mobile QR code to capture and classify the new picture this system is never seen.
 
 ## Research Question
-I am trying to solve the problem of classifying different kinds of flowers with high accuracy way.
+I want my project to be able to classify images of flowers using the camera on my laptop and iPhone.And here are subproblems that need to be solved:
+
+- Collect flower images dataset and classify these images based on CNN and transfer learning.
+- Comparing the differences between the two methods
+- Explore the factors that affect the results of the experiment and improve results
+- Deploy applications to run final impulse on the mobile phone and computer 
 
 ## Application Overview
-Thinking back to the various application diagrams you have seen through the module - how would you describe an overview of the building blocks of your project - how do they connect, what do the component parts include.
 
-*probably ~200 words and a diagram is usually good to convey your design!*
+This application allows users to use the camera on their laptop or camera to capture a picture then analyse the type of flowers. You can use it whenever and wherever even without the internet. Without spending a dime or buying new sensors, any user can test the flowers that appear in their lives.
+<img width="900" alt="Screenshot 2022-03-24 at 15 06 06" src="https://user-images.githubusercontent.com/99146042/159947046-aa3c8f22-bbe2-48e4-b0ff-8968008c335c.png">
 
 ## Data
-In this project, I used the TensorFlow flower example dataset (http://download.tensorflow.org/example_images/flower_photos.tgz). This dataset consists of images of flowers with 5 labels.  The flowers dataset consists of examples which are labelled images of flowers. Each example contains a JPEG flower image and the class label: what type of flower it is. Let's display a few images together with their labels.
-<img width="500" alt="Screenshot 2022-02-28 at 11 48 31" src="https://user-images.githubusercontent.com/99146042/155981071-ff8feabd-cc10-4736-ac81-0088386409a0.png">
+The flower dataset provided by TensorFlow officail example(http://download.tensorflow.org/example_images/flower_photos.tgz). It has 2904 images with 5 labels(Daisy, Dandelions, sunflowers, rose, tulips). I split these as training data(80%) and test data(20%). Training data was used to train the model, while test data was used to evaluate how well the model perform on the new data.
+Daisy|Dandelions|Sunflowers|Rose|Tulips
+--|:--:|--:|--:|--:
+493|701|560|509|641
 
-When training a machine learning model, we split our data into training and test datasets. Generally, the training and validation data set is split into an 80:20 ratio. Thus, 20% of the data is set aside for validation purposes(Deep learning, 2016). Because the amount of data for different types of flowers is not exactly the same, and the data in the labels array has not been shuffled, the most appropriate method is to use the StratifiedShuffleSplit method to perform hierarchical random division.
-![image](https://user-images.githubusercontent.com/99146042/155981144-0033e208-cf7a-4f97-9def-e220e83a4102.png)
-
+Here are some labled images:
+![image](https://user-images.githubusercontent.com/99146042/159248053-c2df3e4f-96f9-4fb8-973e-c7ffd2b7bbb1.png)
+(https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model)
 
 ## Model
-VGG is the winning model of the ILSVRC competition in the visual field in 2014, with an error rate of 7.3% on the ImageNet dataset, which greatly broke the previous year's world record of 11.7%. VGG16 basically inherited the deep ideas of AlexNet, and carried it forward, making it deeper. AlexNet only uses an 8-layer network, while the two versions of VGG are a 16-layer network version and a 19-layer network version. In the following transfer learning practice, I use the slightly simpler VGG16, which has almost the same accuracy as VGG19, but is faster.
 
-![image](https://user-images.githubusercontent.com/99146042/155983752-3a0fa4bb-8911-4364-a047-cbde8c68327d.png)
+Edge impulse provides three models for images classification: Transfer learning, Classification(Keras) and Regression(Keras). According to the research of Gulli, Kapoor and Pal(2019), regression(Keras) are great for predicting numeric continuous values. So this research used CNN(Keras) and transfer learning as test models and explore their differences and principles.
 
-The input data format of VGG is 244 * 224 * 3 pixel data. After a series of convolutional neural network and pooling network processing, the output is a 4096-dimensional feature data, and then through a 3-layer fully connected neural network processing, and finally the classification results are obtained by softmax normalization.
+### CNN(Keras) model
+The convolutional Neural Network is a kind of deep learning method which has become dominant in various computer vision tasks(Rikiya,2018). A CNN typically has three layers: a convolutional layer, a pooling layer, and a fully connected layer. (Sharmad,2021). 
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/99146042/159966131-d37392c7-3c4d-4b14-989e-847100647acd.png">
 
-First, we will hand over all the pictures to VGG16, and use the five-round convolutional network layer and pooling layer in the deep network structure of VGG16 to obtain a 4096-dimensional feature vector for each picture, and then we directly use this feature vector instead The original image, plus several layers of fully connected neural networks, are trained on the flower dataset.
+The convolutional layer plays a key role in the CNN model. This layer performs a dot product between two matrices, where one matrix is the set of learnable parameters otherwise known as a kernel, and the other matrix is the restricted portion of the receptive field. The pooling layer replaces the output of the network at certain locations by deriving a summary statistic of the nearby outputs. Neurons in this layer have full connectivity with all neurons in the preceding and succeeding layers. This is why it can be computed as usual by a matrix multiplication followed by a bias effect.
 
-Therefore, in essence, we use VGG16 as an image feature extractor and then perform an ordinary neural network learning on this basis, so that the original 244 * 224 * 3 dimension data is converted into 4096 dimensions, and each amount of one-dimensional information is greatly increased, which greatly reduces the consumption of computing resources, and realizes the application of knowledge obtained in learning object recognition to special flower classification problems.
+In conclusion, from images’ raw pixel data, the CNN model extracts the features automatically and train the model for classification.
+
+### Transfer learning model
+
 
 
 ## Experiments
@@ -63,11 +62,15 @@ It can be seen that the effect of the model is quite stable, and the calculation
 
 ## Bibliography
 
+Some references don't have City published
 1. Duncan, W. (2022). CASA0018_06. London: UCL, 7-9. https://moodle.ucl.ac.uk/pluginfile.php/4514917/mod_resource/content/1/CASA0018_06.pdf
 2. Last name, First initial. (Year published). Title. Edition. (Only include the edition if it is not the first edition) City published: Publisher, Page(s). http://google.com
 3. Goodfellow, I., Bengio, Y. & Courville, A., 2016. Deep learning / Ian Goodfellow, Yoshua Bengio and Aaron Courville.
-4. https://www.tensorflow.org/tutorials/images/classification#import_tensorflow_and_other_libraries
-5. https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model
+4. Gulli, A., Kapoor, A., & Pal, S. (2019). Deep learning with TensorFlow 2 and Keras: regression, ConvNets, GANs, RNNs, NLP, and more with TensorFlow 2 and the Keras API. Packt Publishing Ltd.
+5. Smith, L. N. (2017, March). Cyclical learning rates for training neural networks. In 2017 IEEE winter conference on applications of computer vision (WACV) (pp. 464-472). IEEE.
+6. https://www.tensorflow.org/tutorials/images/classification#import_tensorflow_and_other_libraries
+7. https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model
+8. D. Grattarola and C. Alippi, "Graph Neural Networks in TensorFlow and Keras with Spektral [Application Notes]," in IEEE Computational Intelligence Magazine, vol. 16, no. 1, pp. 99-106, Feb. 2021, doi: 10.1109/MCI.2020.3039072.
 
 ----
 
