@@ -83,5 +83,6 @@ In conclusion, I think the transfer learning model works better than the CNN mod
 - Goodfellow, I., Bengio, Y. & Courville, A., 2016. Deep learning / Ian Goodfellow, Yoshua Bengio and Aaron Courville.
 - https://www.tensorflow.org/tutorials/images/classification#import_tensorflow_and_other_libraries
 - https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model
+- Smith, L. N. (2017, March). Cyclical learning rates for training neural networks. In 2017 IEEE winter conference on applications of computer vision (WACV) (pp. 464-472). IEEE.
 
 
