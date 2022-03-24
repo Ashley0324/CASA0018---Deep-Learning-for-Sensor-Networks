@@ -65,6 +65,8 @@ I still remember the first model training result(accuracy:39.9%), it's a really 
 ### 📝Critical reflection and learning from experiments 
 We can conclude the factors influcing results from the results: Image Size,Color depth,Training cycles,and Data augmentation.
 
+Actually, th elearning rate will impact the loss value.  Choosing the learning rate is challenging as a value too small may result in a long training process that could get stuck, whereas a value too large may result in learning a sub-optimal set of weights too fast or an unstable training process. According to the Leslie(2015), I find the best learning rate in this model is 0.0005.
+
 In conclusion, I think the transfer learning model works better than the CNN model in flower images classification. Even it cost more time. But it deserves it, isn't it?
 
 
