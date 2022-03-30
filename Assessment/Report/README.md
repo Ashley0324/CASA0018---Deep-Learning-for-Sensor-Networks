@@ -44,9 +44,27 @@ In conclusion, from images’ raw pixel data, the CNN model extracts the feature
 
 ### Transfer learning model
 
+While a convolutional neural network is used to solve machine learning problems, the network can be started with random values for training and can be done by transfer learning(Emine & Ahmet, 2019). Transfer learning and domain adaptation refer to the situation where what has been learned in one setting … is exploited to improve generalization in another setting(Goodfellow, Bengio, & Courville,  2016) It is just like “standing on the shoulder of giants”. But transfer learning only works in deep learning if the model features learned from the first task are general.
 
+There are two methods to use transfer learning:
+- Develop model
+- Pre-trained model (the common method)
+
+Using the pre-trained model to use transfer learning, these models are used most in image classification: VGG, ResNet, AlexNet, and GoogleNet(Emine & Ahmet, 2019).  And it showed that VGG performed best.
+
+### VGG model
+
+VGG is a pre-training model proposed by Oxford's Visual Geometry Group, so the origin of the VGG name is to take the initials of these three words. VGG16 adopts a very simple structure. The entire network uses the same size of convolution kernel size (3×3) and max-pooling layer (2×2). There are two structures of VGG, which are 16-layer structures (13 convolutional layers). layer and 3 fully connected layers) and 19-layer structure (16 convolutional layers and 3 fully connected layers). Compared to VGG19, VGG16 has almost the same accuracy, but is faster. Here is the structure of VGG16:
+<img width="482" alt="image" src="https://user-images.githubusercontent.com/99146042/160887554-81fbf641-25a4-41d8-ac90-0c8e99d4a8d4.png">
 
 ## Experiments
+
+
+
+
+
+
+
 What experiments did you run to test your project? What parameters did you change? How did you measure performance? Did you write any scripts to evaluate performance? Did you use any tools to evaluate performance? Do you have graphs of results? 
 
 *probably ~300 words and graphs and tables are usually good to convey your results!*
@@ -86,6 +104,8 @@ Some references don't have City published
 6. https://www.tensorflow.org/tutorials/images/classification#import_tensorflow_and_other_libraries
 7. https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model
 8. D. Grattarola and C. Alippi, "Graph Neural Networks in TensorFlow and Keras with Spektral [Application Notes]," in IEEE Computational Intelligence Magazine, vol. 16, no. 1, pp. 99-106, Feb. 2021, doi: 10.1109/MCI.2020.3039072.
+9. E. Cengıl and A. Çinar, "Multiple Classification of Flower Images Using Transfer Learning," 2019 International Artificial Intelligence and Data Processing Symposium (IDAP), 2019, pp. 1-6, doi: 10.1109/IDAP.2019.8875953.
+10. Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning. MIT press
 
 ----
 
