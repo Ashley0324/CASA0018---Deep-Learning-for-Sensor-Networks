@@ -52,6 +52,21 @@ What experiments did you run to test your project? What parameters did you chang
 *probably ~300 words and graphs and tables are usually good to convey your results!*
 
 ## Results and Observations
+
+
+
+
+### The parameters what impacts the results
+
+### Test on the new data
+
+### Evaluate the performance
+
+### Results on devices
+
+
+
+
 Synthesis the main results and observations you made from building the project. Did it work perfectly? Why not? What worked and what didn't? Why? What would you do next if you had more time?  
 
 In the end I got 88.83% accuracy on my computer, you can continue to adjust the batch size, or the structure of the model to get a better result. The results obtained by this method have higher accuracy than the TensorFlow case. Actually, the accuracy in the official case is 80.30%.(https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model), which only use transfer learning and model from TF-Hub. Besides, in anonther example, the author used convolutional neural network and the Sequential model to classify the same dataset and the accuracy is 78%.
