@@ -71,6 +71,20 @@ What experiments did you run to test your project? What parameters did you chang
 
 ## Results and Observations
 
+### Overfitting and data augmentation
+
+#### Overfitting 
+
+According to Hawkins(2004), overfitting is "the resulting analysis that corresponds too closely or precisely to a particular set of data and therefore may fail to fit additional data or reliably predict future observations”. In the above experiments, the model training results of the training data are significantly better than those of the test data, which is a case of overfitting.
+
+Overfitting is usually caused by:
+- The amount of data in the centralized data is too small. The training data completely reflects the regularity of all data. Therefore, it is not possible for the model to extract some special features rather than realistic features.
+- Stochastic noise can also lead to overfitting.
+- The third reason is the high complexity of the objective function. Produces deterministic noise.
+
+#### Data augmentation
+
+In order to solve the problem of overfitting, the most common method is to increase the amount of data. However, obtaining sample data is difficult in most cases. Then a simple transformation can be performed on the existing samples to obtain more samples. For example, the image can be flipped, so that the features change, but the target remains the same so that it can be regarded as generating some new samples. This process is data augmentation
 
 
 
@@ -106,6 +120,7 @@ Some references don't have City published
 8. D. Grattarola and C. Alippi, "Graph Neural Networks in TensorFlow and Keras with Spektral [Application Notes]," in IEEE Computational Intelligence Magazine, vol. 16, no. 1, pp. 99-106, Feb. 2021, doi: 10.1109/MCI.2020.3039072.
 9. E. Cengıl and A. Çinar, "Multiple Classification of Flower Images Using Transfer Learning," 2019 International Artificial Intelligence and Data Processing Symposium (IDAP), 2019, pp. 1-6, doi: 10.1109/IDAP.2019.8875953.
 10. Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning. MIT press
+11. Hawkins, D. M. (2004). The problem of overfitting. Journal of chemical information and computer sciences, 44(1), 1-12.
 
 ----
 
