@@ -60,16 +60,12 @@ VGG is a pre-training model proposed by Oxford's Visual Geometry Group, so the o
 ## Experiments
 
 
-
-
-
-
-
-What experiments did you run to test your project? What parameters did you change? How did you measure performance? Did you write any scripts to evaluate performance? Did you use any tools to evaluate performance? Do you have graphs of results? 
-
-*probably ~300 words and graphs and tables are usually good to convey your results!*
-
 ## Results and Observations
+
+### Evaluate the performance
+
+### The parameters what impacts the results
+- 
 
 ### Overfitting and data augmentation
 
@@ -86,13 +82,6 @@ Overfitting is usually caused by:
 
 In order to solve the problem of overfitting, the most common method is to increase the amount of data. However, obtaining sample data is difficult in most cases. Then a simple transformation can be performed on the existing samples to obtain more samples. For example, the image can be flipped, so that the features change, but the target remains the same so that it can be regarded as generating some new samples. This process is data augmentation
 
-
-
-### The parameters what impacts the results
-
-### Test on the new data
-
-### Evaluate the performance
 
 ### Results on devices
 
