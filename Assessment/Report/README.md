@@ -63,7 +63,9 @@ VGG is a pre-training model proposed by Oxford's Visual Geometry Group, so the o
 
 ## Experiments
 
+![image](https://user-images.githubusercontent.com/99146042/161139738-910fa090-8c0d-4b1f-b054-03e4e6ad40a4.png)
 
+I followed this process to build this project.
 
 ## Results and Observations
 
@@ -72,7 +74,12 @@ VGG is a pre-training model proposed by Oxford's Visual Geometry Group, so the o
 The evaluation of the results mainly comes from the following three indicators: accuracy（Traning data and validation data）, loss（Traning data and validation data）and running time per epoch.
 
 ### The parameters what impacts the results
-- 
+- Image size: the biger image size is, the more features the data have, so bigger image size will perfomance better.
+- Color depth: RGB image performance better than grayscale because it has colour imaformation and generate more features.
+- Training cycles: 
+- Learning rate
+- Data augmentation
+- Neurons
 
 ### Overfitting and data augmentation
 
