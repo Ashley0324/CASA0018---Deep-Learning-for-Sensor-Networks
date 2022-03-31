@@ -52,6 +52,10 @@ There are two methods to use transfer learning:
 
 Using the pre-trained model to use transfer learning, these models are used most in image classification: VGG, ResNet, AlexNet, and GoogleNet(Emine & Ahmet, 2019).  And it showed that VGG performed best.
 
+### MobileNetv2
+
+MobileNetV2 uses lightweight depthwise convolutions to filter features in the intermediate expansion layer. This is the transfer learning model included in Edge impulse. It is also a common model for image processing in computer vision. This model is often used in image classification, image segmentation, and object detection. But in the study of identifying flowers, the model did not perform well.
+
 ### VGG model
 
 VGG is a pre-training model proposed by Oxford's Visual Geometry Group, so the origin of the VGG name is to take the initials of these three words. VGG16 adopts a very simple structure. The entire network uses the same size of convolution kernel size (3×3) and max-pooling layer (2×2). There are two structures of VGG, which are 16-layer structures (13 convolutional layers). layer and 3 fully connected layers) and 19-layer structure (16 convolutional layers and 3 fully connected layers). Compared to VGG19, VGG16 has almost the same accuracy, but is faster. Here is the structure of VGG16:
@@ -60,9 +64,12 @@ VGG is a pre-training model proposed by Oxford's Visual Geometry Group, so the o
 ## Experiments
 
 
+
 ## Results and Observations
 
 ### Evaluate the performance
+
+The evaluation of the results mainly comes from the following three indicators: accuracy（Traning data and validation data）, loss（Traning data and validation data）and running time per epoch.
 
 ### The parameters what impacts the results
 - 
@@ -82,19 +89,27 @@ Overfitting is usually caused by:
 
 In order to solve the problem of overfitting, the most common method is to increase the amount of data. However, obtaining sample data is difficult in most cases. Then a simple transformation can be performed on the existing samples to obtain more samples. For example, the image can be flipped, so that the features change, but the target remains the same so that it can be regarded as generating some new samples. This process is data augmentation
 
-
 ### Results on devices
 
-
-
-
+#### Overview of the results
 Synthesis the main results and observations you made from building the project. Did it work perfectly? Why not? What worked and what didn't? Why? What would you do next if you had more time?  
 
-In the end I got 88.83% accuracy on my computer, you can continue to adjust the batch size, or the structure of the model to get a better result. The results obtained by this method have higher accuracy than the TensorFlow case. Actually, the accuracy in the official case is 80.30%.(https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model), which only use transfer learning and model from TF-Hub. Besides, in anonther example, the author used convolutional neural network and the Sequential model to classify the same dataset and the accuracy is 78%.
+In the end I got 88.83% accuracy on my computer. The results obtained by this method have higher accuracy than the TensorFlow case. Actually, the accuracy in the official case is 80.30%.(https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model), which only use transfer learning and model from TF-Hub. Besides, in anonther example, the author used convolutional neural network and the Sequential model to classify the same dataset and the accuracy is 78%.
 
-It can be seen that the effect of the model is quite stable, and the calculation time in the whole process is only more than 30 minutes, which is the charm of transfer learning. So, I think it works perfectly. And this is because I used the VGG model. In the future I will continue to adjust the batch size, or the structure of the model to get a better result.(https://www.tensorflow.org/tutorials/images/classification)
+It can be seen that the effect of the model is quite stable, and the calculation time in the whole process is only more than 30 minutes, which is the charm of transfer learning. So, I think it works perfectly. And this is because I used the VGG16 model. In the future I will continue to adjust the batch size, or the structure of the model to get a better result.(https://www.tensorflow.org/tutorials/images/classification)
 
-*probably ~300 words and remember images and diagrams bring results to life!*
+#### Advantages
+
+- Model choice: Among the three models, VGG16 performs significantly better, and its impact on the results is significant.
+- Parameter tuning: During multiple tests, tuning of different parameters and then realizing that they can have a positive or negative effect on the results. Reading through the literature, I understand why these parameters make effect.
+- Device selection: I selected two devices, a laptop and a mobile phone, to run the program. They are very convenient to use.
+
+#### Disadvantages
+- Overfitting
+However, there is still an overfitting problem. This is because the training dataset numbers are not enough. To solve this problem, I need to collect more flower images.
+
+- Runtime
+Even now the runtime has been reduced. But it still has room for improvement due to my laptop configuration issues. Computation time can be further reduced if better commercial servers or higher-configured computers are used.
 
 ## Bibliography
 
