@@ -67,6 +67,9 @@ VGG is a pre-training model proposed by Oxford's Visual Geometry Group, so the o
 
 I followed this process to build this project.
 
+<img width="816" alt="Screenshot 2022-03-31 at 23 56 55" src="https://user-images.githubusercontent.com/99146042/161162997-69ce3d4c-2d91-441f-add7-dcdeca8869af.png">
+
+
 ## Results and Observations
 
 ### Evaluate the performance
