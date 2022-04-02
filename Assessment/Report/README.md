@@ -65,8 +65,15 @@ VGG is a pre-training model proposed by Oxford's Visual Geometry Group, so the o
 
 ![image](https://user-images.githubusercontent.com/99146042/161139738-910fa090-8c0d-4b1f-b054-03e4e6ad40a4.png)
 
-I followed this process to build this project. In the process of building the model, I 
+I followed this process to build this project.
+- **Collect data:** In this step, I collected 2904 images with 5 labels. These images were split into two parts: training data(80%) and validation data(20%).
+- **Build the model:** I used three models in different tests. The CNN and MobileNetV2 are included in the Edge Impulse. It is convinient to use them by adding a learning block. As a external model, I added VGG16 model to edge impulse fllowing this tutorial: https://docs.edgeimpulse.com/docs
+- **Train the model:** After building or importing the model, I changed different parameters in the model to obtain better results. These parameters include: image size, color depth, training cycles, learning rate and data augmentation.
+- **Test the model:** It used the model test function in edge impulese to test the model.
+- **Deploy the application**: Laptops and mobile phones are devices people use most. So I develop the application on these two types device by Edge Impluse. Users can open this link(https://studio.edgeimpulse.com/studio/87306/deployment) to run the laptop application. While users can scan this QR code to classify flowers in their mobile phones.
+![image](https://user-images.githubusercontent.com/99146042/161396001-bf07057b-b197-4ed2-b346-e268b12c84f5.png)
 
+Here is the experience recording of changing models and parameters:
 <img width="816" alt="Screenshot 2022-03-31 at 23 56 55" src="https://user-images.githubusercontent.com/99146042/161162997-69ce3d4c-2d91-441f-add7-dcdeca8869af.png">
 
 
