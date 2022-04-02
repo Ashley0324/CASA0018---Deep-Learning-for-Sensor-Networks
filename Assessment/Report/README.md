@@ -65,7 +65,7 @@ VGG is a pre-training model proposed by Oxford's Visual Geometry Group, so the o
 
 ![image](https://user-images.githubusercontent.com/99146042/161139738-910fa090-8c0d-4b1f-b054-03e4e6ad40a4.png)
 
-I followed this process to build this project.
+I followed this process to build this project. In the process of building the model, I 
 
 <img width="816" alt="Screenshot 2022-03-31 at 23 56 55" src="https://user-images.githubusercontent.com/99146042/161162997-69ce3d4c-2d91-441f-add7-dcdeca8869af.png">
 
@@ -73,16 +73,14 @@ I followed this process to build this project.
 ## Results and Observations
 
 ### Evaluate the performance
-
 The evaluation of the results mainly comes from the following three indicators: accuracy（Traning data and validation data）, loss（Traning data and validation data）and running time per epoch.
 
 ### The parameters what impacts the results
 - Image size: the biger image size is, the more features the data have, so bigger image size will perfomance better.
 - Color depth: RGB image performance better than grayscale because it has colour imaformation and generate more features.
-- Training cycles: 
-- Learning rate
-- Data augmentation
-- Neurons
+- Training cycles: This is the number of times a training cycle is repeated. In a neural network, every time a training record is considered, the previous weights are quite different, and hence, it is necessary to repeat the cycle many times.  
+- Learning rate: The value of the learning rate is between 0 and 1. Choosing the learning rate is challenging as a value too small may result in a long training process that could get stuck, whereas a value too large may result in learning a sub-optimal set of weights too fast or an unstable training process. According to the Leslie(2015), I find the best learning rate in this model is 0.001 in VGG16 model.
+- Data augmentation：this will be introduced in next part.
 
 ### Overfitting and data augmentation
 
@@ -97,16 +95,15 @@ Overfitting is usually caused by:
 
 #### Data augmentation
 
-In order to solve the problem of overfitting, the most common method is to increase the amount of data. However, obtaining sample data is difficult in most cases. Then a simple transformation can be performed on the existing samples to obtain more samples. For example, the image can be flipped, so that the features change, but the target remains the same so that it can be regarded as generating some new samples. This process is data augmentation
+In order to solve the problem of overfitting, the most common method is to increase the amount of data. However, obtaining sample data is difficult in most cases. Then a simple transformation can be performed on the existing samples to obtain more samples. For example, the image can be flipped, so that the features change, but the target remains the same so that it can be regarded as generating some new samples. This process is data augmentation.
 
 ### Results on devices
 
 #### Overview of the results
-Synthesis the main results and observations you made from building the project. Did it work perfectly? Why not? What worked and what didn't? Why? What would you do next if you had more time?  
 
-In the end I got 88.83% accuracy on my computer. The results obtained by this method have higher accuracy than the TensorFlow case. Actually, the accuracy in the official case is 80.30%.(https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model), which only use transfer learning and model from TF-Hub. Besides, in anonther example, the author used convolutional neural network and the Sequential model to classify the same dataset and the accuracy is 78%.
+In the end I got 99.84% accuracy in the traning data while 84.92% accuract in the test data on my computer. The results obtained by this method have higher accuracy than the TensorFlow case. Actually, the accuracy in the official case is 80.30%(https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model), which only use transfer learning and model from TF-Hub. Besides, in anonther example, the author used convolutional neural network and the Sequential model to classify the same dataset and the accuracy is 78%.(https://www.tensorflow.org/tutorials/images/classification)
 
-It can be seen that the effect of the model is quite stable, and the calculation time in the whole process is only more than 30 minutes, which is the charm of transfer learning. So, I think it works perfectly. And this is because I used the VGG16 model. In the future I will continue to adjust the batch size, or the structure of the model to get a better result.(https://www.tensorflow.org/tutorials/images/classification)
+It can be seen that the effect of VGG16 model is quite stable, and the calculation time in the whole process is only more than 30 minutes, which is the charm of transfer learning. It's less than CNN model, and similar with MobileNetv2 model. So, I think it works perfectly for high accuracy and less runtime. In the future I will continue to adjust the batch size, or the structure of the model to get a better result.
 
 #### Advantages
 
@@ -117,9 +114,18 @@ It can be seen that the effect of the model is quite stable, and the calculation
 #### Disadvantages
 - Overfitting
 However, there is still an overfitting problem. This is because the training dataset numbers are not enough. To solve this problem, I need to collect more flower images.
-
 - Runtime
 Even now the runtime has been reduced. But it still has room for improvement due to my laptop configuration issues. Computation time can be further reduced if better commercial servers or higher-configured computers are used.
+
+### Future Work
+
+To improve the effect of apllication, I'd like to do this actions:
+- Add the number of each kind of flower images.
+- Build the dataset with more types flowers.
+- Add the training cycle by using a higher-configured computer.
+- When I tried to add the training cycles from 20 to 25 or higher, the system always fail to do it. I still can't find the reason. I'll work it in the future.
+![image](https://user-images.githubusercontent.com/99146042/161394943-7ab9eb31-16b7-4006-af8a-8493a83bca22.png)
+
 
 ## Bibliography
 
