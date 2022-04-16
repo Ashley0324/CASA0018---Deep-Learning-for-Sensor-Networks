@@ -3,7 +3,7 @@ Qian Jin
 - Repo link:https://github.com/Ashley0324/CASA0018---Deep-Learning-for-Sensor-Networks
 - Edge impulse link: https://studio.edgeimpulse.com/studio/87595/
 - Date: 24 Mar 2022
-
+ 
 ## Introduction
 Flowers play a vital role in the connected environment and urban life. Flower classification in a high accuracy is helpful to biologists and people who like flowers. Usually, scholars use convolutional neural networks and transfer learning to classify and recognise flowers. According to Yong(2018) transfer learning performs better and gets high accuracy. This research aims to explore what affects the results in flower classification by testing two methods(CNN and transfer learning) based on the flutter flower dataset. The results show that image size, colour depth, training cycles, learning rate and data augmentation are factors influencing the accuracy and loss value. After training and testing the model, the accuracy is obviously improved. At the last step, Edge Impulse was used to create a web application and mobile QR code to capture and classify the new picture this system is never seen.
 
@@ -32,7 +32,7 @@ Here are some labled images:
 
 ## Model
 
-Edge impulse provides three models for images classification: Transfer learning, Classification(Keras) and Regression(Keras). According to the research of Gulli, Kapoor and Pal(2019), regression(Keras) are great for predicting numeric continuous values. So this research used CNN(Keras) and transfer learning as test models and explore their differences and principles.
+Edge impulse provides three models for images classification: Transfer learning, Classification(Keras) and Regression(Keras). According to the research of Gulli, Kapoor and Pal(2019), regression(Keras) are great for predicting numeric continuous values. So this research used CNN(Keras) and transfer learning as test models and explore their differences and principles. CNN(Keras) and MobileNetv2 are learning models inside Edge Impulse, so we can use it without importing.
 
 ### CNN(Keras) model
 The convolutional Neural Network is a kind of deep learning method which has become dominant in various computer vision tasks(Rikiya,2018). A CNN typically has three layers: a convolutional layer, a pooling layer, and a fully connected layer. (Sharmad,2021). 
@@ -58,7 +58,7 @@ MobileNetV2 uses lightweight depthwise convolutions to filter features in the in
 
 ### VGG model
 
-VGG is a pre-training model proposed by Oxford's Visual Geometry Group, so the origin of the VGG name is to take the initials of these three words. VGG16 adopts a very simple structure. The entire network uses the same size of convolution kernel size (3×3) and max-pooling layer (2×2). There are two structures of VGG, which are 16-layer structures (13 convolutional layers). layer and 3 fully connected layers) and 19-layer structure (16 convolutional layers and 3 fully connected layers). Compared to VGG19, VGG16 has almost the same accuracy, but is faster. Here is the structure of VGG16:
+VGG is a pre-training model proposed by Simonyan and Zisserman(2014) in in the ILSVRC-2014 competition. Here is the [source code](https://github.com/Ashley0324/CASA0018---Deep-Learning-for-Sensor-Networks/blob/main/Flower_Images_Classification.ipynb) and training recording. VGG16 adopts a very simple structure. The entire network uses the same size of convolution kernel size (3×3) and max-pooling layer (2×2). There are two structures of VGG, which are 16-layer structures (13 convolutional layers). layer and 3 fully connected layers) and 19-layer structure (16 convolutional layers and 3 fully connected layers). Compared to VGG19, VGG16 has almost the same accuracy, but is faster. Here is the structure of VGG16:
 <img width="482" alt="image" src="https://user-images.githubusercontent.com/99146042/160887554-81fbf641-25a4-41d8-ac90-0c8e99d4a8d4.png">
 
 ## Experiments
@@ -86,7 +86,7 @@ The evaluation of the results mainly comes from the following three indicators: 
 - Image size: the biger image size is, the more features the data have, so bigger image size will perfomance better.
 - Color depth: RGB image performance better than grayscale because it has colour imaformation and generate more features.
 - Training cycles: This is the number of times a training cycle is repeated. In a neural network, every time a training record is considered, the previous weights are quite different, and hence, it is necessary to repeat the cycle many times.  
-- Learning rate: The value of the learning rate is between 0 and 1. Choosing the learning rate is challenging as a value too small may result in a long training process that could get stuck, whereas a value too large may result in learning a sub-optimal set of weights too fast or an unstable training process. According to the Leslie(2015), I find the best learning rate in this model is 0.001 in VGG16 model.
+- Learning rate: The value of the learning rate is between 0 and 1. Choosing the learning rate is challenging as a value too small may result in a long training process that could get stuck, whereas a value too large may result in learning a sub-optimal set of weights too fast or an unstable training process. Leslie proposes to find the optimal learning rate for each person (117), setting a very accurate learning rate after each epoch. 20 times of learning rate, it is good to find out how much the learning rate of each period is tested, and finally compare the loss or acc of different learning rates. I find the best learning rate in this model is 0.001 in VGG16 model.
 - Data augmentation：this will be introduced in next part.
 
 ### Overfitting and data augmentation
@@ -148,6 +148,7 @@ Some references don't have City published
 9. E. Cengıl and A. Çinar, "Multiple Classification of Flower Images Using Transfer Learning," 2019 International Artificial Intelligence and Data Processing Symposium (IDAP), 2019, pp. 1-6, doi: 10.1109/IDAP.2019.8875953.
 10. Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning. MIT press
 11. Hawkins, D. M. (2004). The problem of overfitting. Journal of chemical information and computer sciences, 44(1), 1-12.
+12. L. N. Smith, "Cyclical Learning Rates for Training Neural Networks," 2017 IEEE Winter Conference on Applications of Computer Vision (WACV), 2017, pp. 464-472, doi: 10.1109/WACV.2017.58.
 
 ----
 
