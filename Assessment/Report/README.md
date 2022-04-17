@@ -1,7 +1,7 @@
 # Classify Flowers based on 3 models and anlysis
 Qian Jin
 - Repo link:https://github.com/Ashley0324/CASA0018---Deep-Learning-for-Sensor-Networks
-- Edge impulse link: https://studio.edgeimpulse.com/studio/87595/
+- Edge impulse link: https://studio.edgeimpulse.com/studio/87306
 - Date: 24 Mar 2022
  
 ## Introduction
@@ -34,10 +34,10 @@ Here are some labled images:
 
 ## Model
 
-Edge impulse provides three models for images classification: Transfer learning, Classification(Keras) and Regression(Keras). According to the research of Gulli, Kapoor and Pal(2019), regression(Keras) are great for predicting numeric continuous values. So this research used CNN(Keras) and transfer learning as test models and explore their differences and principles. CNN(Keras) and MobileNetv2 are learning models inside Edge Impulse, so we can use it without importing.
+Edge impulse provides three models for images classification: Transfer learning, Classification(Keras) and Regression(Keras). According to the research of Gulli, Kapoor and Pal(2019), regression(Keras) are great for predicting numeric continuous values. So this research used CNN(Keras) and transfer learning as test models and explore their differences and principles. Edge Impulse comes with Keras and MobileNetv2 by default, so we can use it without importing.
 
 ### CNN(Keras) model
-The convolutional Neural Network is a kind of deep learning method which has become dominant in various computer vision tasks(Yamashita ***et al***., 2018)). A CNN typically has three layers: a convolutional layer, a pooling layer, and a fully connected layer. (Sharmad,2021). 
+The convolutional Neural Network is a kind of deep learning method which has become dominant in various computer vision tasks(Yamashita ***et al***., 2018)). A CNN typically has three layers: a convolutional layer, a pooling layer, and a fully connected layer.
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/99146042/159966131-d37392c7-3c4d-4b14-989e-847100647acd.png">
 
 The convolutional layer plays a key role in the CNN model. This layer performs a dot product between two matrices, where one matrix is the set of learnable parameters otherwise known as a kernel, and the other matrix is the restricted portion of the receptive field. The pooling layer replaces the output of the network at certain locations by deriving a summary statistic of the nearby outputs. Neurons in this layer have full connectivity with all neurons in the preceding and succeeding layers. This is why it can be computed as usual by a matrix multiplication followed by a bias effect.
@@ -52,11 +52,11 @@ There are two methods to use transfer learning:
 - Develop model
 - Pre-trained model (the common method)
 
-Using the pre-trained model to use transfer learning, these models are used most in image classification: VGG, ResNet, AlexNet, and GoogleNet(Emine and Ahmet, 2019).  And it showed that VGG performed best.
+Using the pre-trained model to use transfer learning, these models are used most in image classification: VGG, ResNet, AlexNet, and GoogleNet(Cengıl and Çinar, 2019).  And it showed that VGG performed best.
 
 ### MobileNetv2
 
-MobileNetV2 uses lightweight depthwise convolutions to filter features in the intermediate expansion layer. This is the transfer learning model included in Edge impulse. It is also a common model for image processing in computer vision. This model is often used in image classification, image segmentation, and object detection. But in the study of identifying flowers, the model did not perform well.
+MobileNetV2 uses lightweight depthwise convolutions to filter features in the intermediate expansion layer. This is the transfer learning model included in Edge impulse(Cengıl and Çinar, 2019). It is also a common model for image processing in computer vision. This model is often used in image classification, image segmentation, and object detection. But in the study of identifying flowers, the model did not perform well.
 
 ### VGG model
 
@@ -76,7 +76,7 @@ I followed this process to build this project.
 ![image](https://user-images.githubusercontent.com/99146042/161396001-bf07057b-b197-4ed2-b346-e268b12c84f5.png)
 
 Here is the experience recording of changing models and parameters:
-<img width="816" alt="Screenshot 2022-03-31 at 23 56 55" src="https://user-images.githubusercontent.com/99146042/161162997-69ce3d4c-2d91-441f-add7-dcdeca8869af.png">
+<img width="788" alt="Screenshot 2022-04-17 at 19 03 55" src="https://user-images.githubusercontent.com/99146042/163726797-a3eb5ce6-e390-40b5-b9c9-c2a1103be85e.png">
 
 
 ## Results and Observations
@@ -85,17 +85,27 @@ Here is the experience recording of changing models and parameters:
 The evaluation of the results mainly comes from the following three indicators: accuracy（Traning data and validation data）, loss（Traning data and validation data）and running time per epoch.
 
 ### The parameters what impacts the results
-- Image size: the biger image size is, the more features the data have, so bigger image size will perfomance better.
-- Color depth: RGB image performance better than grayscale because it has colour imaformation and generate more features.
-- Training cycles: This is the number of times a training cycle is repeated. In a neural network, every time a training record is considered, the previous weights are quite different, and hence, it is necessary to repeat the cycle many times.  
-- Learning rate: The value of the learning rate is between 0 and 1. Choosing the learning rate is challenging as a value too small may result in a long training process that could get stuck, whereas a value too large may result in learning a sub-optimal set of weights too fast or an unstable training process. Leslie proposes to find the optimal learning rate for each person (117), setting a very accurate learning rate after each epoch. 20 times of learning rate, it is good to find out how much the learning rate of each period is tested, and finally compare the loss or acc of different learning rates. I find the best learning rate in this model is 0.001 in VGG16 model.
-- Data augmentation：this will be introduced in next part.
+
+1.Image size
+We resized all images to equal dimetions before training, this is the width and height all images are resized to. Bigger image size means more image pixel values.Then the more features are generated. So bigger image size will perfomance better.
+
+2.Color depth
+RGB image performance better than grayscale because it has colour imaformation and generate more features.
+
+3.Training cycles
+This is the number of times a training cycle is repeated. In a neural network, every time a training record is considered, the previous weights are quite different, and hence, it is necessary to repeat the cycle many times.  
+
+4.Learning rate
+This hyperparameter defines the size of each step in the gradient descent. Set smaller numbers to see ‘slower’ learning. The value of the learning rate is between 0 and 1. Choosing the learning rate is challenging as a value too small may result in a long training process that could get stuck, whereas a value too large may result in learning a sub-optimal set of weights too fast or an unstable training process. Smith(2017) proposes a method to find the optimal learning rate , setting a very accurate learning rate after each epoch. 20 times of learning rate, it is good to find out how much the learning rate of each period is tested, and finally compare the loss or accuracy of different learning rates. I find the best learning rate in this model is 0.001 in VGG16 model.
+
+5.Data augmentatio
+This will be introduced in next part.
 
 ### Overfitting and data augmentation
 
 #### Overfitting 
 
-According to Hawkins(2004), overfitting is "the resulting analysis that corresponds too closely or precisely to a particular set of data and therefore may fail to fit additional data or reliably predict future observations”. In the above experiments, the model training results of the training data are significantly better than those of the test data, which is a case of overfitting.
+Hawkins(2004) defined overfitting as "the resulting analysis that corresponds too closely or precisely to a particular set of data and therefore may fail to fit additional data or reliably predict future observations”. In the above experiments, the model training results of the training data are significantly better than those of the test data, which is a case of overfitting.
 
 Overfitting is usually caused by:
 - The amount of data in the centralized data is too small. The training data completely reflects the regularity of all data. Therefore, it is not possible for the model to extract some special features rather than realistic features.
@@ -123,15 +133,13 @@ It can be seen that the effect of VGG16 model is quite stable, and the calculati
 #### Disadvantages
 - Overfitting
 However, there is still an overfitting problem. This is because the training dataset numbers are not enough. To solve this problem, I need to collect more flower images.
-- Runtime
-Even now the runtime has been reduced. But it still has room for improvement due to my laptop configuration issues. Computation time can be further reduced if better commercial servers or higher-configured computers are used.
 
 ### Future Work
 
 To improve the effect of apllication, I'd like to do this actions:
 - Add the number of each kind of flower images.
 - Build the dataset with more types flowers.
-- Add the training cycle by using a higher-configured computer.
+- Add the training cycle.
 - When I tried to add the training cycles from 20 to 25 or higher, the system always fail to do it. I still can't find the reason. I'll work it in the future.
 ![image](https://user-images.githubusercontent.com/99146042/161394943-7ab9eb31-16b7-4006-af8a-8493a83bca22.png)
 
@@ -142,21 +150,10 @@ To improve the effect of apllication, I'd like to do this actions:
 2. Gulli, A., Kapoor, A., & Pal, S. (2019). Deep learning with TensorFlow 2 and Keras: regression, ConvNets, GANs, RNNs, NLP, and more with TensorFlow 2 and the Keras API. Packt Publishing Ltd.
 3. Yamashita, R., Nishio, M., Do, R. K. G., & Togashi, K. (2018). Convolutional neural networks: an overview and application in radiology. Insights into imaging, 9(4), 611-629.
 4. Gupta, P. R., Sharma, D., & Goel, N. (2022). Image Forgery Detection by CNN and Pretrained VGG16 Model. In Proceedings of Academia-Industry Consortium for Data Science (pp. 141-152). Springer, Singapore.
-
-
-
-
-1. Duncan, W. (2022). CASA0018_06. London: UCL, 7-9. https://moodle.ucl.ac.uk/pluginfile.php/4514917/mod_resource/content/1/CASA0018_06.pdf
-2. Last name, First initial. (Year published). Title. Edition. (Only include the edition if it is not the first edition) City published: Publisher, Page(s). http://google.com
-3. Goodfellow, I., Bengio, Y. & Courville, A., 2016. Deep learning / Ian Goodfellow, Yoshua Bengio and Aaron Courville.
-5. Smith, L. N. (2017, March). Cyclical learning rates for training neural networks. In 2017 IEEE winter conference on applications of computer vision (WACV) (pp. 464-472). IEEE.
-6. https://www.tensorflow.org/tutorials/images/classification#import_tensorflow_and_other_libraries
-7. https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model
-8. D. Grattarola and C. Alippi, "Graph Neural Networks in TensorFlow and Keras with Spektral [Application Notes]," in IEEE Computational Intelligence Magazine, vol. 16, no. 1, pp. 99-106, Feb. 2021, doi: 10.1109/MCI.2020.3039072.
-9. E. Cengıl and A. Çinar, "Multiple Classification of Flower Images Using Transfer Learning," 2019 International Artificial Intelligence and Data Processing Symposium (IDAP), 2019, pp. 1-6, doi: 10.1109/IDAP.2019.8875953.
-10. Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning. MIT press
-11. Hawkins, D. M. (2004). The problem of overfitting. Journal of chemical information and computer sciences, 44(1), 1-12.
-12. L. N. Smith, "Cyclical Learning Rates for Training Neural Networks," 2017 IEEE Winter Conference on Applications of Computer Vision (WACV), 2017, pp. 464-472, doi: 10.1109/WACV.2017.58.
+5. Cengıl, E., & Çinar, A. (2019, September). Multiple classification of flower images using transfer learning. In 2019 International Artificial Intelligence and Data Processing Symposium (IDAP) (pp. 1-6). IEEE.
+6. Simonyan, K., & Zisserman, A. (2014). Very deep convolutional networks for large-scale image recognition. arXiv preprint arXiv:1409.1556.
+7. Hawkins, D. M. (2004). The problem of overfitting. Journal of chemical information and computer sciences, 44(1), 1-12.
+8. Smith, L. N. (2017, March). Cyclical learning rates for training neural networks. In 2017 IEEE winter conference on applications of computer vision (WACV) (pp. 464-472). IEEE.
 
 ----
 
