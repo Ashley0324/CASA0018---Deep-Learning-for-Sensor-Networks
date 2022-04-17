@@ -5,7 +5,9 @@ Qian Jin
 - Date: 24 Mar 2022
  
 ## Introduction
-Flowers play a vital role in the connected environment and urban life. Flower classification in a high accuracy is helpful to biologists and people who like flowers. Usually, scholars use convolutional neural networks and transfer learning to classify and recognise flowers. According to Yong(2018) transfer learning performs better and gets high accuracy. This research aims to explore what affects the results in flower classification by testing two methods(CNN and transfer learning) based on the flutter flower dataset. The results show that image size, colour depth, training cycles, learning rate and data augmentation are factors influencing the accuracy and loss value. After training and testing the model, the accuracy is obviously improved. At the last step, Edge Impulse was used to create a web application and mobile QR code to capture and classify the new picture this system is never seen.
+Flowers play a vital role in the connected environment and urban life. When people walk in the park and encounter beautiful flowers, they will wonder what kind they are. But plant experts are rare, and this app can help users solve this problem easily. Users only need to open the mobile phone to take pictures to know the type of flowers. It's like carrying a botanist with you.
+
+Usually, scholars use convolutional neural networks and transfer learning to classify and recognise flowers. According to Emine and Ahmet(2019) transfer learning performs better and gets high accuracy. This research aims to explore what affects the results in flower classification by testing two methods(CNN and transfer learning) based on the flutter flower dataset. The results show that image size, colour depth, training cycles, learning rate and data augmentation are factors influencing the accuracy and loss value. After training and testing the model, the accuracy is obviously improved. At the last step, Edge Impulse was used to create a web application and mobile QR code to capture and classify the new picture this system is never seen.
 
 ## Research Question
 I want my project to be able to classify images of flowers using the camera on my laptop and iPhone.And here are subproblems that need to be solved:
@@ -35,7 +37,7 @@ Here are some labled images:
 Edge impulse provides three models for images classification: Transfer learning, Classification(Keras) and Regression(Keras). According to the research of Gulli, Kapoor and Pal(2019), regression(Keras) are great for predicting numeric continuous values. So this research used CNN(Keras) and transfer learning as test models and explore their differences and principles. CNN(Keras) and MobileNetv2 are learning models inside Edge Impulse, so we can use it without importing.
 
 ### CNN(Keras) model
-The convolutional Neural Network is a kind of deep learning method which has become dominant in various computer vision tasks(Rikiya,2018). A CNN typically has three layers: a convolutional layer, a pooling layer, and a fully connected layer. (Sharmad,2021). 
+The convolutional Neural Network is a kind of deep learning method which has become dominant in various computer vision tasks(Yamashita ***et al***., 2018)). A CNN typically has three layers: a convolutional layer, a pooling layer, and a fully connected layer. (Sharmad,2021). 
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/99146042/159966131-d37392c7-3c4d-4b14-989e-847100647acd.png">
 
 The convolutional layer plays a key role in the CNN model. This layer performs a dot product between two matrices, where one matrix is the set of learnable parameters otherwise known as a kernel, and the other matrix is the restricted portion of the receptive field. The pooling layer replaces the output of the network at certain locations by deriving a summary statistic of the nearby outputs. Neurons in this layer have full connectivity with all neurons in the preceding and succeeding layers. This is why it can be computed as usual by a matrix multiplication followed by a bias effect.
@@ -44,13 +46,13 @@ In conclusion, from images’ raw pixel data, the CNN model extracts the feature
 
 ### Transfer learning model
 
-While a convolutional neural network is used to solve machine learning problems, the network can be started with random values for training and can be done by transfer learning(Emine & Ahmet, 2019). Transfer learning and domain adaptation refer to the situation where what has been learned in one setting … is exploited to improve generalization in another setting(Goodfellow, Bengio, & Courville,  2016) It is just like “standing on the shoulder of giants”. But transfer learning only works in deep learning if the model features learned from the first task are general.
+While a convolutional neural network is used to solve machine learning problems, the network can be started with random values for training and can be done by transfer learning(Emine & Ahmet, 2019). Transfer learning and domain adaptation refer to the situation where what has been learned in one setting … is exploited to improve generalization in another setting(Goodfellow, Bengio and Courville,  2016) It is just like “standing on the shoulder of giants”. But transfer learning only works in deep learning if the model features learned from the first task are general.
 
 There are two methods to use transfer learning:
 - Develop model
 - Pre-trained model (the common method)
 
-Using the pre-trained model to use transfer learning, these models are used most in image classification: VGG, ResNet, AlexNet, and GoogleNet(Emine & Ahmet, 2019).  And it showed that VGG performed best.
+Using the pre-trained model to use transfer learning, these models are used most in image classification: VGG, ResNet, AlexNet, and GoogleNet(Emine and Ahmet, 2019).  And it showed that VGG performed best.
 
 ### MobileNetv2
 
@@ -136,11 +138,17 @@ To improve the effect of apllication, I'd like to do this actions:
 
 ## Bibliography
 
-Some references don't have City published
+1. Cengıl, E., & Çinar, A. (2019, September). Multiple classification of flower images using transfer learning. In 2019 International Artificial Intelligence and Data Processing Symposium (IDAP) (pp. 1-6). IEEE.
+2. Gulli, A., Kapoor, A., & Pal, S. (2019). Deep learning with TensorFlow 2 and Keras: regression, ConvNets, GANs, RNNs, NLP, and more with TensorFlow 2 and the Keras API. Packt Publishing Ltd.
+3. Yamashita, R., Nishio, M., Do, R. K. G., & Togashi, K. (2018). Convolutional neural networks: an overview and application in radiology. Insights into imaging, 9(4), 611-629.
+4. Gupta, P. R., Sharma, D., & Goel, N. (2022). Image Forgery Detection by CNN and Pretrained VGG16 Model. In Proceedings of Academia-Industry Consortium for Data Science (pp. 141-152). Springer, Singapore.
+
+
+
+
 1. Duncan, W. (2022). CASA0018_06. London: UCL, 7-9. https://moodle.ucl.ac.uk/pluginfile.php/4514917/mod_resource/content/1/CASA0018_06.pdf
 2. Last name, First initial. (Year published). Title. Edition. (Only include the edition if it is not the first edition) City published: Publisher, Page(s). http://google.com
 3. Goodfellow, I., Bengio, Y. & Courville, A., 2016. Deep learning / Ian Goodfellow, Yoshua Bengio and Aaron Courville.
-4. Gulli, A., Kapoor, A., & Pal, S. (2019). Deep learning with TensorFlow 2 and Keras: regression, ConvNets, GANs, RNNs, NLP, and more with TensorFlow 2 and the Keras API. Packt Publishing Ltd.
 5. Smith, L. N. (2017, March). Cyclical learning rates for training neural networks. In 2017 IEEE winter conference on applications of computer vision (WACV) (pp. 464-472). IEEE.
 6. https://www.tensorflow.org/tutorials/images/classification#import_tensorflow_and_other_libraries
 7. https://www.tensorflow.org/hub/tutorials/image_feature_vector#build_the_model
